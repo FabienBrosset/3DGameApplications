@@ -7,6 +7,7 @@ public class OptionManagement : MonoBehaviour
     public GameObject canvasOption;
     public GameObject canvasAudio;
     public GameObject canvasKeyboard;
+    public GameObject canvasVideo;
 
     // Start is called before the first frame update
     void Start()
@@ -33,10 +34,17 @@ public class OptionManagement : MonoBehaviour
 
     }
 
+    public void ToVideoOption()
+    {
+        canvasOption.SetActive(false);
+        canvasVideo.SetActive(true);
+    }
+
     public void ReturnToOption()
     {
         canvasKeyboard.SetActive(false);
         canvasAudio.SetActive(false);
+        canvasVideo.SetActive(false);
         canvasOption.SetActive(true);
     }
 }
