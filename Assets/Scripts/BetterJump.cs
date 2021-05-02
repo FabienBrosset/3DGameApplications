@@ -5,6 +5,7 @@ using UnityEngine;
 public class BetterJump : MonoBehaviour
 {
     private Rigidbody rb;
+    public int multGravity;
 
     void Awake()
     {
@@ -15,7 +16,7 @@ public class BetterJump : MonoBehaviour
     {
         if (rb.velocity.y < 0)
         {
-            rb.AddForce(Physics.gravity * rb.mass);
+            rb.AddForce(Physics.gravity * rb.mass * multGravity);
         }
     }
 }
