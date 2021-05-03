@@ -205,6 +205,8 @@ public class DrawingManager : MonoBehaviour
 
         obj.AddComponent<MeshCollider>();
 
+        obj.transform.localScale = new Vector3(1f, 1f, 3f);
+
         if (inkSelected == 0)
         {
             obj.GetComponent<Renderer>().material = inkMat;

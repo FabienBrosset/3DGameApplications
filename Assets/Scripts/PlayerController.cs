@@ -34,10 +34,10 @@ public class PlayerController : MonoBehaviour
             jumpRequest = true;
             anim.SetTrigger("IsJumping");
         }
-        if (rb.position.y < 0)
+        /*if (rb.position.y < -10f)
         {
             die();
-        }
+        }*/
         walkingAnimation(move);
         rb.velocity = new Vector2(move, rb.velocity.y);
     }
