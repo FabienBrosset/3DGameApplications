@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     public LayerMask mask;
     public int ink;
     public GameObject spawnPoint;
+    bool m_Started;
+
 
 
     void Start()
@@ -23,6 +25,8 @@ public class PlayerController : MonoBehaviour
         bc = GetComponent<MeshCollider>();
         anim = GetComponent<Animator>();
         ink = 0;
+        m_Started = true;
+
     }
 
     void Update()
@@ -34,7 +38,7 @@ public class PlayerController : MonoBehaviour
             jumpRequest = true;
             anim.SetTrigger("IsJumping");
         }
-        if (rb.position.y < 0)
+        if (rb.position.y < -2f)
         {
             die();
         }
@@ -70,8 +74,25 @@ public class PlayerController : MonoBehaviour
     {
         float extraHeightText = 0.1f;
         RaycastHit hit;
+        Vector3 pos = transform.position;
 
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, mask))
+        pos.y += 0.1f;
+        Collider[] hitColliders = Physics.OverlapBox(pos, transform.localScale / 3, Quaternion.identity, mask);
+
+        int i = 0;
+
+        while (i < hitColliders.Length)
+        {
+            if (hitColliders[i].name != "ybot")
+            {
+                if (!grounded && rb.velocity.y < 0)
+                    anim.SetTrigger("IsOnGround");
+                return true;
+            }
+            i++;
+        }
+
+        /*if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, mask))
         {
             if (hit.distance < 0.1f)
             {
@@ -80,9 +101,20 @@ public class PlayerController : MonoBehaviour
                 return true;
             }
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * hit.distance, Color.yellow);
-        }
+        }*/
 
         return false;
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+
+        Vector3 pos = transform.position;
+
+        pos.y += 0.1f;
+        if (m_Started)
+            Gizmos.DrawWireCube(pos, transform.localScale / 3);
     }
 
     private void die()
