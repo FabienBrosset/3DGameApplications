@@ -81,6 +81,11 @@ public class PlayerController : MonoBehaviour
 
         int i = 0;
 
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, mask))
+        {
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * hit.distance, Color.yellow);
+        }
+
         while (i < hitColliders.Length)
         {
             if (hitColliders[i].name != "ybot")
@@ -92,16 +97,9 @@ public class PlayerController : MonoBehaviour
             i++;
         }
 
-        /*if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, mask))
-        {
-            if (hit.distance < 0.1f)
-            {
-                if (!grounded)
-                    anim.SetTrigger("IsOnGround");
-                return true;
-            }
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * hit.distance, Color.yellow);
-        }*/
+
+
+        
 
         return false;
     }
