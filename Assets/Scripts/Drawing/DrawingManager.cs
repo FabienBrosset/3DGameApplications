@@ -22,10 +22,16 @@ public class DrawingManager : MonoBehaviour
 
     public GameObject drawingSlotPrefab;
 
-    public int inkClassicAmount = 10;
+    public int[] inkAmount = new int[4]; // classic, bounce
+
+    public int inkSelected = 0;
 
     public Material spotTouchedMat;
+
     public Material inkMat;
+    public Material inkBounceMat;
+
+    public PhysicMaterial bounceMat;
 
     private GameObject actualDrawSpot;
 
@@ -35,6 +41,9 @@ public class DrawingManager : MonoBehaviour
 
     void Start()
     {
+        inkAmount[0] = 10;
+        inkAmount[1] = 10;
+
         SetDrawingSpot();
     }
 
@@ -49,6 +58,11 @@ public class DrawingManager : MonoBehaviour
             Destroy(GameObject.Find("DrawSpot"));
             CreateMesh();
             SetDrawingSpot();
+        }
+
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            inkSelected = 1;
         }
 
         if (clickActive)
@@ -91,12 +105,12 @@ public class DrawingManager : MonoBehaviour
 
     private void StoreSpotDrawing(GameObject drawingSpot)
     {
-        if (drawingSpot.name == "stored" || inkClassicAmount == 0)
+        if (drawingSpot.name == "stored" || inkAmount[inkSelected] == 0)
             return;
         drawingSpot.GetComponent<Renderer>().material = spotTouchedMat;
         drawingSpot.name = "stored";
 
-        inkClassicAmount -= 1;
+        inkAmount[inkSelected] -= 1;
 
         verticesData.Add(new DataVertices((drawingSpot.transform.position.x - 0.25f), (drawingSpot.transform.position.y - 0.25f)));
     }
@@ -189,9 +203,19 @@ public class DrawingManager : MonoBehaviour
         mesh.Optimize();
         mesh.RecalculateNormals();
 
-        obj.GetComponent<Renderer>().material = inkMat;
         obj.AddComponent<MeshCollider>();
-        
+
+        obj.transform.localScale = new Vector3(1f, 1f, 3f);
+
+        if (inkSelected == 0)
+        {
+            obj.GetComponent<Renderer>().material = inkMat;
+        }
+        else if (inkSelected == 1)
+        {
+            obj.GetComponent<Renderer>().material = inkBounceMat;
+            obj.GetComponent<MeshCollider>().material = bounceMat;
+        }
 
     }
 
