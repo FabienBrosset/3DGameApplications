@@ -4913,6 +4913,7 @@ GameObject:
   m_Component:
   - component: {fileID: 621708131}
   - component: {fileID: 621708130}
+  - component: {fileID: 621708132}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -4946,6 +4947,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &621708132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621708129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb4462fe4c341134c9e9eaace540d990, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  savedData:
+    audio:
+      FxVolume: 0
+      MusicVolume: 0
+    keyboard:
+      Forward: 0
+      Backward: 0
+      Left: 0
+      Right: 0
+      Jump: 0
+      Crouch: 0
+    video:
+      ResolutionIndex: 0
+      QualityIndex: 0
+      isFullScreen: 0
 --- !u!4 &625787260 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4251480744898436, guid: 530f2b006b035de45bcd4d17f288924f, type: 3}

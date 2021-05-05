@@ -1,19 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static SettingsData;
+
 
 public class VolumeManager : MonoBehaviour
 {
     public AudioSource FxAudioSource;
     public AudioSource MusicAudioSource;
 
-    private float FxVolume = 10;
-    private float MusicVolume = 10;
+    public SettingsData settingsData;
 
     void Update()
     {
-        FxAudioSource.volume = FxVolume / 10;
-        MusicAudioSource.volume = MusicVolume / 10;
+        FxAudioSource.volume = settingsData.savedData.audio.FxVolume / 10;
+        MusicAudioSource.volume = settingsData.savedData.audio.MusicVolume / 10;
     }
 
     public void setGeneralVolume(float vol)
@@ -24,11 +25,11 @@ public class VolumeManager : MonoBehaviour
 
     public void setFxVolume(float vol)
     {
-        FxVolume = vol;
+        settingsData.savedData.audio.FxVolume = vol;
     }
 
     public void setMusicVolume(float vol)
     {
-        MusicVolume = vol;
+        settingsData.savedData.audio.MusicVolume = vol;
     }
 }

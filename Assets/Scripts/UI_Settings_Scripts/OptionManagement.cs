@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+
 
 public class OptionManagement : MonoBehaviour
 {
@@ -9,17 +12,8 @@ public class OptionManagement : MonoBehaviour
     public GameObject canvasKeyboard;
     public GameObject canvasVideo;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public SettingsData SettingsData;
+    public KeyBindManager keyBindManager;
 
     public void ToAudioOption()
     {
@@ -42,6 +36,7 @@ public class OptionManagement : MonoBehaviour
 
     public void ReturnToOption()
     {
+        SettingsData.WriteJsonToDataPersistent();
         canvasKeyboard.SetActive(false);
         canvasAudio.SetActive(false);
         canvasVideo.SetActive(false);

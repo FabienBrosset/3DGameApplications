@@ -2,29 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static SettingsData;
 
 public class KeyBindManager : MonoBehaviour
 {
     private Dictionary<string, KeyCode> keys = new Dictionary<string, KeyCode>();
 
-    public Text up, left, down, right, jump, crouch;
+    public Text forward, left, backward, right, jump, crouch;
 
     private GameObject currentKey;
 
     private Color32 normal = new Color32(104, 186, 214, 255);
     private Color32 selected = new Color32(245, 141, 66, 255);
+
+    public SettingsData SettingsData;
     // Start is called before the first frame update
     void Start()
     {
-        keys.Add("Up", KeyCode.W);
-        keys.Add("Down", KeyCode.S);
-        keys.Add("Left", KeyCode.A);
-        keys.Add("Right", KeyCode.D);
-        keys.Add("Jump", KeyCode.Space);
-        keys.Add("Crouch", KeyCode.LeftShift);
+        keys.Add("Forward", SettingsData.savedData.keyboard.Forward);
+        keys.Add("Backward", SettingsData.savedData.keyboard.Backward);
+        keys.Add("Left", SettingsData.savedData.keyboard.Left);
+        keys.Add("Right", SettingsData.savedData.keyboard.Right);
+        keys.Add("Jump", SettingsData.savedData.keyboard.Jump);
+        keys.Add("Crouch", SettingsData.savedData.keyboard.Crouch);
 
-        up.text = keys["Up"].ToString();
-        down.text = keys["Down"].ToString();
+        forward.text = keys["Forward"].ToString();
+        backward.text = keys["Backward"].ToString();
         left.text = keys["Left"].ToString();
         right.text = keys["Right"].ToString();
         jump.text = keys["Jump"].ToString();
@@ -34,27 +37,33 @@ public class KeyBindManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(keys["Up"]))
+        SettingsData.savedData.keyboard.Forward = keys["Forward"];
+        SettingsData.savedData.keyboard.Backward = keys["Backward"];
+        SettingsData.savedData.keyboard.Left = keys["Left"];
+        SettingsData.savedData.keyboard.Right = keys["Right"];
+        SettingsData.savedData.keyboard.Jump = keys["Jump"];
+        SettingsData.savedData.keyboard.Crouch = keys["Crouch"];
+        if (Input.GetKeyDown(SettingsData.savedData.keyboard.Forward))
         {
-            Debug.Log("Up");
+            Debug.Log("Forward");
         }
-        if (Input.GetKeyDown(keys["Down"]))
+        if (Input.GetKeyDown(SettingsData.savedData.keyboard.Backward))
         {
-            Debug.Log("Down");
+            Debug.Log("Backward");
         }
-        if (Input.GetKeyDown(keys["Left"]))
+        if (Input.GetKeyDown(SettingsData.savedData.keyboard.Left))
         {
             Debug.Log("Left");
         }
-        if (Input.GetKeyDown(keys["Right"]))
+        if (Input.GetKeyDown(SettingsData.savedData.keyboard.Right))
         {
             Debug.Log("Right");
         }
-        if (Input.GetKeyDown(keys["Jump"]))
+        if (Input.GetKeyDown(SettingsData.savedData.keyboard.Jump))
         {
             Debug.Log("Jump");
         }
-        if (Input.GetKeyDown(keys["Crouch"]))
+        if (Input.GetKeyDown(SettingsData.savedData.keyboard.Crouch))
         {
             Debug.Log("Crouch");
         }

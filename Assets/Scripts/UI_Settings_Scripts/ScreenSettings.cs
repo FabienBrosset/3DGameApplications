@@ -2,11 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static SettingsData;
 
 public class ScreenSettings : MonoBehaviour
 {
     public Dropdown resolutionDropdown;
+    public Dropdown qualityDropdown;
+    public Toggle fullscreenToggle;
+
     Resolution[] resolutions;
+    
+    public SettingsData settingsData;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,23 +37,28 @@ public class ScreenSettings : MonoBehaviour
 
         resolutionDropdown.ClearOptions();
         resolutionDropdown.AddOptions(options);
-        resolutionDropdown.value = currentResolutionIndex;
+        resolutionDropdown.value = settingsData.savedData.video.ResolutionIndex;
+        qualityDropdown.value = settingsData.savedData.video.QualityIndex;
+        fullscreenToggle.isOn = settingsData.savedData.video.isFullScreen;
         resolutionDropdown.RefreshShownValue();
     }
 
     public void SetResolution(int resolutionIndex)
     {
-        Resolution resolution = resolutions[resolutionIndex];
+        settingsData.savedData.video.ResolutionIndex = resolutionIndex;
+        Resolution resolution = resolutions[settingsData.savedData.video.ResolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 
     public void SetQuality(int qualityIndex)
     {
-        QualitySettings.SetQualityLevel(qualityIndex, true);
+        settingsData.savedData.video.QualityIndex = qualityIndex;
+        QualitySettings.SetQualityLevel(settingsData.savedData.video.QualityIndex, true);
     }
 
     public void SetFullScreen(bool isFullScreen)
     {
-        Screen.fullScreen = isFullScreen;
+        settingsData.savedData.video.isFullScreen = isFullScreen;
+        Screen.fullScreen = settingsData.savedData.video.isFullScreen;
     }
 }
