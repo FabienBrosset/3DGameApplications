@@ -83,14 +83,15 @@ public class PlayerController : MonoBehaviour
 
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, mask))
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * hit.distance, Color.yellow);
+            //Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * hit.distance, Color.yellow);
         }
 
         while (i < hitColliders.Length)
         {
+            //Debug.Log(rb.velocity.y);
             if (hitColliders[i].name != "ybot")
             {
-                if (!grounded && rb.velocity.y < 0)
+                if (!grounded && rb.velocity.y < 1)
                     anim.SetTrigger("IsOnGround");
                 return true;
             }

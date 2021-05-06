@@ -22,7 +22,7 @@ public class DrawingManager : MonoBehaviour
 
     public GameObject drawingSlotPrefab;
 
-    public int[] inkAmount = new int[4]; // classic, bounce
+    public int[] inkAmount = new int[4]; // classic, bounce, balloon, fade
 
     public int inkSelected = 0;
 
@@ -30,8 +30,9 @@ public class DrawingManager : MonoBehaviour
 
     public Material inkMat;
     public Material inkBounceMat;
+    public Material inkBalloonMat;
+    public Material inkFadeMat;
 
-    public PhysicMaterial bounceMat;
 
     private GameObject actualDrawSpot;
 
@@ -43,6 +44,8 @@ public class DrawingManager : MonoBehaviour
     {
         inkAmount[0] = 10;
         inkAmount[1] = 10;
+        inkAmount[2] = 10;
+        inkAmount[3] = 10;
 
         SetDrawingSpot();
     }
@@ -62,7 +65,9 @@ public class DrawingManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            inkSelected = 1;
+            inkSelected += 1;
+            if (inkSelected == 4)
+                inkSelected = 0;
         }
 
         if (clickActive)
@@ -214,58 +219,22 @@ public class DrawingManager : MonoBehaviour
         else if (inkSelected == 1)
         {
             obj.GetComponent<Renderer>().material = inkBounceMat;
-            obj.GetComponent<MeshCollider>().material = bounceMat;
+            obj.tag = "Bounce";
         }
+        else if (inkSelected == 2)
+        {
+            obj.GetComponent<Renderer>().material = inkBalloonMat;
+            obj.AddComponent<BalloonScript>();
+        }
+        else if (inkSelected == 3)
+        {
+            obj.GetComponent<Renderer>().material = inkFadeMat;
+            //fade script
+        }
+
+        verticesData = new List<DataVertices>();
 
     }
 
 
 }
-
-/*
-
-
-public class MeshGenerator : MonoBehaviour {
-
-	void Start () {
-		CreateCube ();
-	}
-
-	private void CreateCube () {
-		Vector3[] vertices = {
-			new Vector3 (0, 0, 0),
-			new Vector3 (1, 0, 0),
-			new Vector3 (1, 1, 0),
-			new Vector3 (0, 1, 0),
-			new Vector3 (0, 1, 1),
-			new Vector3 (1, 1, 1),
-			new Vector3 (1, 0, 1),
-			new Vector3 (0, 0, 1),
-		};
-
-		int[] triangles = {
-			0, 2, 1, //face front
-			0, 3, 2,
-			2, 3, 4, //face top
-			2, 4, 5,
-			1, 2, 5, //face right
-			1, 5, 6,
-			0, 7, 4, //face left
-			0, 4, 3,
-			5, 4, 7, //face back
-			5, 7, 6,
-			0, 6, 7, //face bottom
-			0, 1, 6
-		};
-			
-		Mesh mesh = GetComponent<MeshFilter> ().mesh;
-		mesh.Clear ();
-		mesh.vertices = vertices;
-		mesh.triangles = triangles;
-		mesh.Optimize ();
-		mesh.RecalculateNormals ();
-	}
-}
-
-
- * */
