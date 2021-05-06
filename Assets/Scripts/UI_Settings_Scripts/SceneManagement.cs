@@ -21,14 +21,14 @@ public class SceneManagement : MonoBehaviour
     // SCENES MANAGEMENT AND QUIT GAME //
     /////////////////////////////////////
 
-    public void ToOptionScene()
+/*    public void ToOptionScene()
     {
         SceneManager.LoadScene(1);
-    }
+    }*/
 
     public void ToGameScene()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(1);
     }
 
     public void ToMenuScene()
@@ -36,10 +36,10 @@ public class SceneManagement : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public void ToHowToPlay()
+/*    public void ToHowToPlay()
     {
         SceneManager.LoadScene(2);
-    }
+    }*/
 
     public void QuitGame()
     {

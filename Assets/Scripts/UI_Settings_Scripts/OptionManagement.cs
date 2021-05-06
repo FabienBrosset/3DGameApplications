@@ -7,10 +7,14 @@ using System.IO;
 
 public class OptionManagement : MonoBehaviour
 {
+    public GameObject canvasMenu;
     public GameObject canvasOption;
     public GameObject canvasAudio;
     public GameObject canvasKeyboard;
     public GameObject canvasVideo;
+    public GameObject canvasHowToPlay;
+    public GameObject particles;
+    public GameObject particles1;
 
     public SettingsData SettingsData;
     public KeyBindManager keyBindManager;
@@ -34,12 +38,33 @@ public class OptionManagement : MonoBehaviour
         canvasVideo.SetActive(true);
     }
 
-    public void ReturnToOption()
+    public void ReturnToMainMenu()
+    {
+        canvasOption.SetActive(false);
+        canvasHowToPlay.SetActive(false);
+        canvasMenu.SetActive(true);
+        particles.SetActive(false);
+        particles1.SetActive(false);
+    }
+
+    public void ToHowToPlay()
+    {
+        canvasMenu.SetActive(false);
+        canvasHowToPlay.SetActive(true);
+        particles.SetActive(true);
+        particles1.SetActive(true);
+
+    }
+
+    public void ToOption()
     {
         SettingsData.WriteJsonToDataPersistent();
+        canvasMenu.SetActive(false);
         canvasKeyboard.SetActive(false);
         canvasAudio.SetActive(false);
         canvasVideo.SetActive(false);
         canvasOption.SetActive(true);
+        particles.SetActive(true);
+        particles1.SetActive(true);
     }
 }

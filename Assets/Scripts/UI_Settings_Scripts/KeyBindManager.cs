@@ -19,6 +19,12 @@ public class KeyBindManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(SettingsData.savedData.keyboard.Forward);
+        Debug.Log(SettingsData.savedData.keyboard.Backward);
+        Debug.Log(SettingsData.savedData.keyboard.Left);
+        Debug.Log(SettingsData.savedData.keyboard.Right);
+        Debug.Log(SettingsData.savedData.keyboard.Jump);
+        Debug.Log(SettingsData.savedData.keyboard.Crouch);
         keys.Add("Forward", SettingsData.savedData.keyboard.Forward);
         keys.Add("Backward", SettingsData.savedData.keyboard.Backward);
         keys.Add("Left", SettingsData.savedData.keyboard.Left);

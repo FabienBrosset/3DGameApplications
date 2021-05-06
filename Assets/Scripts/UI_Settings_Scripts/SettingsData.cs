@@ -48,6 +48,8 @@ public class SettingsData : MonoBehaviour
     {
         string dataPath = Path.Combine(Application.persistentDataPath, "SettingsData.json");
 
+        Debug.Log("SettingsData");
+
         if (!System.IO.File.Exists(dataPath))
         {
             savedData.audio.FxVolume = 10;
@@ -61,8 +63,8 @@ public class SettingsData : MonoBehaviour
             savedData.video.isFullScreen = true;
             savedData.video.QualityIndex = 3;
             savedData.video.ResolutionIndex = Screen.resolutions.Length - 1;
-            setScreenData();
             WriteJsonToDataPersistent();
+            setScreenData();
         }
         else
             savedData = JsonUtility.FromJson<SaveData>(File.ReadAllText(dataPath));
