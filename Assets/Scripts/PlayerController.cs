@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
         {
             if (hitColliders[i].name != "ybot")
             {
-                if (!grounded && rb.velocity.y < 1)
+                if (!grounded && rb.velocity.y < 0)
                     anim.SetTrigger("IsOnGround");
                 return true;
             }
