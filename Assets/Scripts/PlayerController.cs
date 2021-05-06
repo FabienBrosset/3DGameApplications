@@ -38,10 +38,10 @@ public class PlayerController : MonoBehaviour
             jumpRequest = true;
             anim.SetTrigger("IsJumping");
         }
-        /*if (rb.position.y < -10f)
+        if (rb.position.y < -10f)
         {
             die();
-        }*/
+        }
         walkingAnimation(move);
         rb.velocity = new Vector2(move, rb.velocity.y);
     }
@@ -73,22 +73,15 @@ public class PlayerController : MonoBehaviour
     private bool IsGrounded()
     {
         float extraHeightText = 0.1f;
+        int i = 0;
         RaycastHit hit;
         Vector3 pos = transform.position;
 
         pos.y += 0.1f;
         Collider[] hitColliders = Physics.OverlapBox(pos, transform.localScale / 3, Quaternion.identity, mask);
 
-        int i = 0;
-
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, mask))
-        {
-            //Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * hit.distance, Color.yellow);
-        }
-
         while (i < hitColliders.Length)
         {
-            //Debug.Log(rb.velocity.y);
             if (hitColliders[i].name != "ybot")
             {
                 if (!grounded && rb.velocity.y < 1)
@@ -97,11 +90,6 @@ public class PlayerController : MonoBehaviour
             }
             i++;
         }
-
-
-
-        
-
         return false;
     }
 
