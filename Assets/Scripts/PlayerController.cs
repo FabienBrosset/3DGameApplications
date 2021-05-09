@@ -55,6 +55,9 @@ public class PlayerController : MonoBehaviour
             jumpRequest = false;
             grounded = false;
         }
+
+        if (grounded && rb.velocity.y < 3 && anim.GetCurrentAnimatorStateInfo(0).IsName("Jump"))
+            anim.SetTrigger("IsOnGround");
     }
 
     private void walkingAnimation(float move)
@@ -72,9 +75,7 @@ public class PlayerController : MonoBehaviour
 
     private bool IsGrounded()
     {
-        float extraHeightText = 0.1f;
         int i = 0;
-        RaycastHit hit;
         Vector3 pos = transform.position;
 
         pos.y += 0.1f;
@@ -84,8 +85,6 @@ public class PlayerController : MonoBehaviour
         {
             if (hitColliders[i].name != "ybot")
             {
-                if (!grounded && rb.velocity.y < 0)
-                    anim.SetTrigger("IsOnGround");
                 return true;
             }
             i++;

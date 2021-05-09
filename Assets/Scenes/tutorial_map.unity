@@ -13248,7 +13248,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3151504800843882748, guid: fb9c7c5d4fd0bf34985a3e7b1eec6dec, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.71
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 3151504800843882748, guid: fb9c7c5d4fd0bf34985a3e7b1eec6dec, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13277,6 +13277,22 @@ PrefabInstance:
     - target: {fileID: 3151504800843882748, guid: fb9c7c5d4fd0bf34985a3e7b1eec6dec, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185977423834457010, guid: fb9c7c5d4fd0bf34985a3e7b1eec6dec, type: 3}
+      propertyPath: m_Interpolate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185977423834457010, guid: fb9c7c5d4fd0bf34985a3e7b1eec6dec, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185977423834457010, guid: fb9c7c5d4fd0bf34985a3e7b1eec6dec, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185977423834457011, guid: fb9c7c5d4fd0bf34985a3e7b1eec6dec, type: 3}
+      propertyPath: m_Size.z
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3185977423834457013, guid: fb9c7c5d4fd0bf34985a3e7b1eec6dec, type: 3}
       propertyPath: spawnPoint
