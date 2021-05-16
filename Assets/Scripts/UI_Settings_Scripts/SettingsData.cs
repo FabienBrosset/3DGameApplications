@@ -48,8 +48,6 @@ public class SettingsData : MonoBehaviour
     {
         string dataPath = Path.Combine(Application.persistentDataPath, "SettingsData.json");
 
-        Debug.Log("SettingsData");
-
         if (!System.IO.File.Exists(dataPath))
         {
             savedData.audio.FxVolume = 10;

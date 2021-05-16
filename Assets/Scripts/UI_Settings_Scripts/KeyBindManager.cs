@@ -19,12 +19,6 @@ public class KeyBindManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(SettingsData.savedData.keyboard.Forward);
-        Debug.Log(SettingsData.savedData.keyboard.Backward);
-        Debug.Log(SettingsData.savedData.keyboard.Left);
-        Debug.Log(SettingsData.savedData.keyboard.Right);
-        Debug.Log(SettingsData.savedData.keyboard.Jump);
-        Debug.Log(SettingsData.savedData.keyboard.Crouch);
         keys.Add("Forward", SettingsData.savedData.keyboard.Forward);
         keys.Add("Backward", SettingsData.savedData.keyboard.Backward);
         keys.Add("Left", SettingsData.savedData.keyboard.Left);
@@ -49,30 +43,6 @@ public class KeyBindManager : MonoBehaviour
         SettingsData.savedData.keyboard.Right = keys["Right"];
         SettingsData.savedData.keyboard.Jump = keys["Jump"];
         SettingsData.savedData.keyboard.Crouch = keys["Crouch"];
-        if (Input.GetKeyDown(SettingsData.savedData.keyboard.Forward))
-        {
-            Debug.Log("Forward");
-        }
-        if (Input.GetKeyDown(SettingsData.savedData.keyboard.Backward))
-        {
-            Debug.Log("Backward");
-        }
-        if (Input.GetKeyDown(SettingsData.savedData.keyboard.Left))
-        {
-            Debug.Log("Left");
-        }
-        if (Input.GetKeyDown(SettingsData.savedData.keyboard.Right))
-        {
-            Debug.Log("Right");
-        }
-        if (Input.GetKeyDown(SettingsData.savedData.keyboard.Jump))
-        {
-            Debug.Log("Jump");
-        }
-        if (Input.GetKeyDown(SettingsData.savedData.keyboard.Crouch))
-        {
-            Debug.Log("Crouch");
-        }
     }
 
     void OnGUI()
