@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
     public float maxSpeed;
     public float jumpVelocity;
     public LayerMask mask;
-    public int ink;
     public GameObject spawnPoint;
     bool m_Started;
 
@@ -24,7 +23,6 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         bc = GetComponent<MeshCollider>();
         anim = GetComponent<Animator>();
-        ink = 0;
         m_Started = true;
 
     }
@@ -50,7 +48,19 @@ public class PlayerController : MonoBehaviour
     {
         if (jumpRequest)
         {
-            rb.AddForce(Vector2.up * jumpVelocity, ForceMode.Impulse);
+            Vector3 pos = transform.position;
+            float bounce = 1f;
+
+            pos.y += 0.1f;
+            Collider[] hitColliders = Physics.OverlapBox(pos, transform.localScale / 3, Quaternion.identity, mask);
+
+            foreach (Collider col in hitColliders)
+            {
+                if (col.tag == "Bounce")
+                    bounce = 1.5f;
+            }
+
+            rb.AddForce(Vector2.up * (jumpVelocity * bounce), ForceMode.Impulse);
 
             jumpRequest = false;
             grounded = false;
@@ -112,8 +122,8 @@ public class PlayerController : MonoBehaviour
     {
         if (other.tag == "Ink")
         {
-            Debug.Log("+100 ink");
-            ink += 100;
+            //callhere
+            GameObject.Find("DrawingArea").GetComponent<DrawingManager>().AddInk(0, 10);
             Destroy(other.gameObject);
         }
         if (other.tag == "Lava")

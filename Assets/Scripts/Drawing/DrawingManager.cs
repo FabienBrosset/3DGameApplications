@@ -31,8 +31,12 @@ public class DrawingManager : MonoBehaviour
     public Material inkMat;
     public Material inkBounceMat;
     public Material inkBalloonMat;
-    public Material inkFadeMat;
 
+    public AudioSource audioSource;
+    public AudioClip inkClassicSound;
+    public AudioClip inkBounceSound;
+    public AudioClip inkBalloonSound;
+    public AudioClip inkFadeSound;
 
     private GameObject actualDrawSpot;
 
@@ -82,6 +86,11 @@ public class DrawingManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void AddInk(int type, int amount)
+    {
+        inkAmount[type] += amount;
     }
 
     private void SetDrawingSpot()
@@ -215,22 +224,25 @@ public class DrawingManager : MonoBehaviour
         if (inkSelected == 0)
         {
             obj.GetComponent<Renderer>().material = inkMat;
+            audioSource.PlayOneShot(inkClassicSound, 1);
         }
         else if (inkSelected == 1)
         {
             obj.GetComponent<Renderer>().material = inkBounceMat;
             obj.tag = "Bounce";
+            audioSource.PlayOneShot(inkBounceSound, 1);
         }
         else if (inkSelected == 2)
         {
             obj.GetComponent<Renderer>().material = inkBalloonMat;
             obj.AddComponent<BalloonScript>();
             obj.tag = "BalloonInk";
+            audioSource.PlayOneShot(inkBalloonSound, 1);
         }
         else if (inkSelected == 3)
         {
-            obj.GetComponent<Renderer>().material = inkFadeMat;
-            //fade script
+            obj.AddComponent<FadeScript>();
+            audioSource.PlayOneShot(inkFadeSound, 1);
         }
 
         verticesData = new List<DataVertices>();
