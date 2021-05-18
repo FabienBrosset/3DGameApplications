@@ -51,7 +51,8 @@ MonoBehaviour:
   spotTouchedMat: {fileID: 2100000, guid: 094cef0d69602a64aa8f7cbf3a78b10c, type: 2}
   inkMat: {fileID: 2100000, guid: 9ed13cae75bb8274faaab1bde70f755d, type: 2}
   inkBounceMat: {fileID: 2100000, guid: fa782f0cf61733d4c8d3914dd6b5510f, type: 2}
-  bounceMat: {fileID: 13400000, guid: a06a4715ef05b4f4ca82026db837466d, type: 2}
+  inkBalloonMat: {fileID: 2100000, guid: dbbd4d4b9947309489537485b32fbb2e, type: 2}
+  inkFadeMat: {fileID: 2100000, guid: 8f09cb6526d918d4a9ef13cd36d6b2f0, type: 2}
 --- !u!33 &2457862505295976906
 MeshFilter:
   m_ObjectHideFlags: 0

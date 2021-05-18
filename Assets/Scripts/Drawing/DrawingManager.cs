@@ -225,6 +225,7 @@ public class DrawingManager : MonoBehaviour
         {
             obj.GetComponent<Renderer>().material = inkBalloonMat;
             obj.AddComponent<BalloonScript>();
+            obj.tag = "BalloonInk";
         }
         else if (inkSelected == 3)
         {

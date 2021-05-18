@@ -18,24 +18,23 @@ public class BalloonScript : MonoBehaviour
         if (fly)
             transform.Translate(Vector3.up * Time.deltaTime, Space.World);
 
-        Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, 1f);
+        Collider[] hitColliders = Physics.OverlapSphere(this.transform.GetComponent<Renderer>().bounds.center, this.GetComponent<Renderer>().bounds.size.y);
         foreach (var hitCollider in hitColliders)
         {
-            if (hitCollider.transform.tag != "Player" && hitCollider.transform.tag != "DrawingSpot")
+            if (hitCollider.transform.tag != "Player" && hitCollider.transform.tag != "DrawingSpot" && hitCollider.transform.tag != "BalloonInk")
             {
-                Debug.Log(hitCollider.transform.tag);
                 fly = false;
             }
         }
         
 
     }
-
+    /*
     void OnDrawGizmosSelected()
     {
         // Draw a yellow sphere at the transform's position
         Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(transform.localPosition, 1);
-    }
+        Gizmos.DrawSphere(this.transform.GetComponent<Renderer>().bounds.center, this.GetComponent<Renderer>().bounds.size.y);
+    }*/
 
 }
