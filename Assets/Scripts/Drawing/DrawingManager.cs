@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public struct DataVertices
@@ -19,7 +20,7 @@ public struct DataVertices
 [RequireComponent(typeof(MeshRenderer))]
 public class DrawingManager : MonoBehaviour
 {
-
+    public Image InkAmountBar;
     public GameObject drawingSlotPrefab;
 
     public int[] inkAmount = new int[4]; // classic, bounce, balloon, fade
@@ -92,6 +93,7 @@ public class DrawingManager : MonoBehaviour
                 }
             }
         }
+        InkAmountBar.fillAmount = (inkAmount[inkSelected] / 30f);
     }
 
     public void AddInk(int type, int amount)
