@@ -74,11 +74,11 @@ public class DrawingManager : MonoBehaviour
             if (inkSelected == 4)
                 inkSelected = 0;
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             inkSelected -= 1;
             if (inkSelected == -1)
-                inkSelected = 4;
+                inkSelected = 3;
         }
 
         if (clickActive)
