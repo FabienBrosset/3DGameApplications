@@ -17,8 +17,6 @@ public class PlayerController : MonoBehaviour
     public GameObject spawnPoint;
     bool m_Started;
 
-    public GameObject infoPopup;
-
     public SettingsData SettingsData;
 
     void Start()
@@ -123,11 +121,24 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Ink")
+        if (other.tag == "NormalInk")
         {
-            //callhere
             GameObject.Find("DrawingArea").GetComponent<DrawingManager>().AddInk(0, 10);
-            infoPopup.SetActive(true);
+            Destroy(other.gameObject);
+        }
+        if (other.tag == "BounceInk")
+        {
+            GameObject.Find("DrawingArea").GetComponent<DrawingManager>().AddInk(1, 10);
+            Destroy(other.gameObject);
+        }
+        if (other.tag == "BallonInk")
+        {
+            GameObject.Find("DrawingArea").GetComponent<DrawingManager>().AddInk(2, 10);
+            Destroy(other.gameObject);
+        }
+        if (other.tag == "FadeInk")
+        {
+            GameObject.Find("DrawingArea").GetComponent<DrawingManager>().AddInk(3, 10);
             Destroy(other.gameObject);
         }
         if (other.tag == "Lava")
