@@ -98,8 +98,8 @@ public class PlayerController : MonoBehaviour
         int i = 0;
         Vector3 pos = transform.position;
 
-        pos.y += 0.05f;
-        Collider[] hitColliders = Physics.OverlapBox(pos, new Vector3(0.05f, 0.2f, 0.2f), Quaternion.identity, mask);
+        pos.y -= 0.05f;
+        Collider[] hitColliders = Physics.OverlapBox(pos, new Vector3(0.3883882f, 0.05f, 0.2f), Quaternion.identity, mask);
 
         while (i < hitColliders.Length)
         {
@@ -118,9 +118,9 @@ public class PlayerController : MonoBehaviour
 
         Vector3 pos = transform.position;
 
-        pos.y += 0.05f;
+        pos.y -= 0.05f;
         if (m_Started)
-            Gizmos.DrawWireCube(pos, new Vector3(0.05f, 0.2f, 0.2f));
+            Gizmos.DrawWireCube(pos, new Vector3(0.3883882f, 0.05f, 0.2f));
     }
 
     private void die()
