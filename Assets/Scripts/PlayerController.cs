@@ -17,8 +17,6 @@ public class PlayerController : MonoBehaviour
     public GameObject spawnPoint;
     bool m_Started;
 
-    public GameObject infoPopup;
-
     public SettingsData SettingsData;
 
     void Start()
@@ -127,7 +125,6 @@ public class PlayerController : MonoBehaviour
         {
             //callhere
             GameObject.Find("DrawingArea").GetComponent<DrawingManager>().AddInk(0, 10);
-            infoPopup.SetActive(true);
             Destroy(other.gameObject);
         }
         if (other.tag == "Lava")

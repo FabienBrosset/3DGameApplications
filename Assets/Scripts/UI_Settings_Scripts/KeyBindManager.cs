@@ -8,7 +8,7 @@ public class KeyBindManager : MonoBehaviour
 {
     private Dictionary<string, KeyCode> keys = new Dictionary<string, KeyCode>();
 
-    public Text forward, left, backward, right, jump, crouch;
+    public Text left, right, jump, slot1, slot2, slot3, slot4;
 
     private GameObject currentKey;
 
@@ -19,30 +19,33 @@ public class KeyBindManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        keys.Add("Forward", SettingsData.savedData.keyboard.Forward);
-        keys.Add("Backward", SettingsData.savedData.keyboard.Backward);
         keys.Add("Left", SettingsData.savedData.keyboard.Left);
         keys.Add("Right", SettingsData.savedData.keyboard.Right);
         keys.Add("Jump", SettingsData.savedData.keyboard.Jump);
-        keys.Add("Crouch", SettingsData.savedData.keyboard.Crouch);
+        keys.Add("Slot1", SettingsData.savedData.keyboard.Slot1);
+        keys.Add("Slot2", SettingsData.savedData.keyboard.Slot2);
+        keys.Add("Slot3", SettingsData.savedData.keyboard.Slot3);
+        keys.Add("Slot4", SettingsData.savedData.keyboard.Slot4);
 
-        forward.text = keys["Forward"].ToString();
-        backward.text = keys["Backward"].ToString();
         left.text = keys["Left"].ToString();
         right.text = keys["Right"].ToString();
         jump.text = keys["Jump"].ToString();
-        crouch.text = keys["Crouch"].ToString();
+        slot1.text = keys["Slot1"].ToString();
+        slot2.text = keys["Slot2"].ToString();
+        slot3.text = keys["Slot3"].ToString();
+        slot4.text = keys["Slot4"].ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
-        SettingsData.savedData.keyboard.Forward = keys["Forward"];
-        SettingsData.savedData.keyboard.Backward = keys["Backward"];
         SettingsData.savedData.keyboard.Left = keys["Left"];
         SettingsData.savedData.keyboard.Right = keys["Right"];
         SettingsData.savedData.keyboard.Jump = keys["Jump"];
-        SettingsData.savedData.keyboard.Crouch = keys["Crouch"];
+        SettingsData.savedData.keyboard.Slot1 = keys["Slot1"];
+        SettingsData.savedData.keyboard.Slot2 = keys["Slot2"];
+        SettingsData.savedData.keyboard.Slot3 = keys["Slot3"];
+        SettingsData.savedData.keyboard.Slot4 = keys["Slot4"];
     }
 
     void OnGUI()

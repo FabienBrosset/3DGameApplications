@@ -26,12 +26,13 @@ public class SettingsData : MonoBehaviour
     [Serializable]
     public class KeyboardData
     {
-        public KeyCode Forward;
-        public KeyCode Backward;
         public KeyCode Left;
         public KeyCode Right;
         public KeyCode Jump;
-        public KeyCode Crouch;
+        public KeyCode Slot1;
+        public KeyCode Slot2;
+        public KeyCode Slot3;
+        public KeyCode Slot4;
     }
 
     [Serializable]
@@ -52,12 +53,13 @@ public class SettingsData : MonoBehaviour
         {
             savedData.audio.FxVolume = 10;
             savedData.audio.MusicVolume = 10;
-            savedData.keyboard.Forward = KeyCode.W;
-            savedData.keyboard.Backward = KeyCode.S;
             savedData.keyboard.Left = KeyCode.Q;
             savedData.keyboard.Right = KeyCode.D;
             savedData.keyboard.Jump = KeyCode.Space;
-            savedData.keyboard.Crouch = KeyCode.LeftShift;
+            savedData.keyboard.Slot1 = KeyCode.Alpha1;
+            savedData.keyboard.Slot2 = KeyCode.Alpha2;
+            savedData.keyboard.Slot3 = KeyCode.Alpha3;
+            savedData.keyboard.Slot4 = KeyCode.Alpha4;
             savedData.video.isFullScreen = true;
             savedData.video.QualityIndex = 3;
             savedData.video.ResolutionIndex = Screen.resolutions.Length - 1;

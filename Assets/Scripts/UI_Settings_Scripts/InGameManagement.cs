@@ -13,6 +13,7 @@ public class InGameManagement : MonoBehaviour
     public GameObject particles1;
     public GameObject canvasUI;
     public GameObject canvasPause;
+    public GameObject drawingArea;
     public AudioSource myFX;
     public AudioClip pauseSound;
 
@@ -46,6 +47,7 @@ public class InGameManagement : MonoBehaviour
 
     void PauseOn()
     {
+        drawingArea.SetActive(false);
         canvasUI.SetActive(false);
         canvasPause.SetActive(true);
         particles.SetActive(true);
@@ -54,6 +56,7 @@ public class InGameManagement : MonoBehaviour
 
     void PauseOff()
     {
+        drawingArea.SetActive(true);
         canvasUI.SetActive(true);
         canvasPause.SetActive(false);
         particles.SetActive(false);

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static SettingsData;
 
 
 public struct DataVertices
@@ -20,6 +21,8 @@ public struct DataVertices
 [RequireComponent(typeof(MeshRenderer))]
 public class DrawingManager : MonoBehaviour
 {
+    public SettingsData SettingsData;
+
     public Image InkAmountBar;
     public GameObject drawingSlotPrefab;
 
@@ -80,6 +83,15 @@ public class DrawingManager : MonoBehaviour
             if (inkSelected == -1)
                 inkSelected = 3;
         }
+
+        if (Input.GetKeyDown(SettingsData.savedData.keyboard.Slot1))
+            inkSelected = 0;
+        if (Input.GetKeyDown(SettingsData.savedData.keyboard.Slot2))
+            inkSelected = 1;
+        if (Input.GetKeyDown(SettingsData.savedData.keyboard.Slot3))
+            inkSelected = 2;
+        if (Input.GetKeyDown(SettingsData.savedData.keyboard.Slot4))
+            inkSelected = 3;
 
         if (clickActive)
         {
