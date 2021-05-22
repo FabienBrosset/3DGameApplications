@@ -124,21 +124,25 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "NormalInk")
         {
             GameObject.Find("DrawingArea").GetComponent<DrawingManager>().AddInk(0, 10);
+            other.gameObject.GetComponent<onCollectInk>().displayText();
             Destroy(other.gameObject);
         }
         if (other.tag == "BounceInk")
         {
             GameObject.Find("DrawingArea").GetComponent<DrawingManager>().AddInk(1, 10);
+            other.gameObject.GetComponent<onCollectInk>().displayText();
             Destroy(other.gameObject);
         }
         if (other.tag == "BallonInk")
         {
             GameObject.Find("DrawingArea").GetComponent<DrawingManager>().AddInk(2, 10);
+            other.gameObject.GetComponent<onCollectInk>().displayText();
             Destroy(other.gameObject);
         }
         if (other.tag == "FadeInk")
         {
             GameObject.Find("DrawingArea").GetComponent<DrawingManager>().AddInk(3, 10);
+            other.gameObject.GetComponent<onCollectInk>().displayText();
             Destroy(other.gameObject);
         }
         if (other.tag == "Lava")
