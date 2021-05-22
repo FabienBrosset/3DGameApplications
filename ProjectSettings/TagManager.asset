@@ -11,6 +11,7 @@ TagManager:
   - NormalInk
   - BounceInk
   - FadeInk
+  - BalloonInk
   layers:
   - Default
   - TransparentFX
