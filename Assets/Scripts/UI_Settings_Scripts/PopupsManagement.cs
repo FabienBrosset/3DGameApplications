@@ -16,6 +16,11 @@ public class PopupsManagement : MonoBehaviour
     {
     }
 
+    public void openInfoPopup()
+    {
+        infoPopup.SetActive(true);
+    }
+
     public void closeInfoPopup()
     {
         infoPopup.SetActive(false);

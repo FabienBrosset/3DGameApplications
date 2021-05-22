@@ -1,31 +1,30 @@
-/*using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class SlotsHovering : MonoBehaviour
-{
-    public GameObject inkPopup;
-
-    void OnMouseOver()
-    {
-        inkPopup.SetActive(true);
-        Debug.Log("Mouse is over GameObject.");
-    }
-
-    void OnMouseExit()
-    {
-        inkPopup.SetActive(false);
-        Debug.Log("Mouse is over GameObject.");
-    }
-}*/
-
 using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using static DrawingManager;
 
 public class SlotsHovering : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public GameObject inkPopup;
+    public Text textSlot;
+    public int id;
+
+    public DrawingManager DrawingManager;
+
+    void Update()
+    {
+        if (id == DrawingManager.inkSelected)
+        {
+            gameObject.GetComponent<Image>().color = new Color(0, 217, 255);
+            textSlot.color = new Color(0, 217, 255);
+        }
+        else
+        {
+            gameObject.GetComponent<Image>().color = new Color(255, 255, 255);
+            textSlot.color = new Color(255, 255, 255);
+        }
+    }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
