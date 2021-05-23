@@ -1642,6 +1642,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4013905553807786, guid: 72743bd38a7349d4fa26ac056b454810, type: 3}
   m_PrefabInstance: {fileID: 455312454}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &535004931
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 535004932}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &535004932
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535004931}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.87, y: 36.22, z: 0.71}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &547334720
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2701,7 +2731,7 @@ PrefabInstance:
     - target: {fileID: 3185977423834457013, guid: fb9c7c5d4fd0bf34985a3e7b1eec6dec, type: 3}
       propertyPath: spawnPoint
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 535004931}
     - target: {fileID: 3185977423834457013, guid: fb9c7c5d4fd0bf34985a3e7b1eec6dec, type: 3}
       propertyPath: SettingsData
       value: 
