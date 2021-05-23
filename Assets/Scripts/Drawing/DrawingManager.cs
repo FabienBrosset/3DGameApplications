@@ -50,11 +50,6 @@ public class DrawingManager : MonoBehaviour
 
     void Start()
     {
-        inkAmount[0] = 10;
-        inkAmount[1] = 10;
-        inkAmount[2] = 10;
-        inkAmount[3] = 10;
-
         SetDrawingSpot();
     }
 
