@@ -26,9 +26,14 @@ public class SceneManagement : MonoBehaviour
         SceneManager.LoadScene(1);
     }*/
 
-    public void ToGameScene()
+    public void ToTutorial()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void ToFirstLevel()
+    {
+        SceneManager.LoadScene(2);
     }
 
     public void ToMenuScene()
