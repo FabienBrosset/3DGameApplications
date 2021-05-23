@@ -8,6 +8,7 @@ using System.IO;
 public class OptionManagement : MonoBehaviour
 {
     public GameObject canvasMenu;
+    public GameObject canvasSelector;
     public GameObject canvasOption;
     public GameObject canvasAudio;
     public GameObject canvasKeyboard;
@@ -25,6 +26,12 @@ public class OptionManagement : MonoBehaviour
         canvasAudio.SetActive(true);
     }
 
+    public void ToSelector()
+    {
+        canvasMenu.SetActive(false);
+        canvasSelector.SetActive(true);
+    }
+
     public void ToKeyboardOption()
     {
         canvasOption.SetActive(false);
@@ -40,6 +47,7 @@ public class OptionManagement : MonoBehaviour
 
     public void ReturnToMainMenu()
     {
+        canvasSelector.SetActive(false);
         canvasOption.SetActive(false);
         canvasHowToPlay.SetActive(false);
         canvasMenu.SetActive(true);
