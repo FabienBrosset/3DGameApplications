@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2457862505295976905
 Transform:
   m_ObjectHideFlags: 0
@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcea8f9bffa759c44852037cc301a955, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SettingsData: {fileID: 0}
+  InkAmountBar: {fileID: 0}
   drawingSlotPrefab: {fileID: 8486766981285088708, guid: c2452b2efcaf65e408dad37e2a10d901, type: 3}
   inkAmount: 00000000000000000000000000000000
   inkSelected: 0
