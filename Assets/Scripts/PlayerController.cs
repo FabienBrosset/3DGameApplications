@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static SettingsData;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,11 +11,17 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private bool jumpRequest = true;
     private bool grounded = true;
+    private int death = 0;
+
+    public AudioSource audioSource;
+    public AudioClip jumpSound;
+    public AudioClip dieSound;
 
     public float maxSpeed;
     public float jumpVelocity;
     public LayerMask mask;
     public GameObject spawnPoint;
+    public Text deathText;
     bool m_Started;
     bool onCollision;
 
@@ -27,6 +34,8 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         m_Started = true;
         onCollision = false;
+        death = 0;
+        deathText.text = "Death : " + death.ToString();
     }
 
     void Update()
@@ -38,7 +47,7 @@ public class PlayerController : MonoBehaviour
             jumpRequest = true;
             anim.SetTrigger("IsJumping");
         }
-        if (rb.position.y < -10f)
+        if (rb.position.y < -10f || rb.position.y > 20f)
         {
             die();
         }
@@ -61,6 +70,7 @@ public class PlayerController : MonoBehaviour
             Vector3 pos = transform.position;
             float bounce = 1f;
 
+            audioSource.PlayOneShot(jumpSound, 1);
             pos.y += 0.1f;
             Collider[] hitColliders = Physics.OverlapBox(pos, transform.localScale / 3, Quaternion.identity, mask);
 
@@ -125,7 +135,10 @@ public class PlayerController : MonoBehaviour
 
     private void die()
     {
+        audioSource.PlayOneShot(dieSound, 1);
         transform.localPosition = spawnPoint.transform.localPosition;
+        death++;
+        deathText.text = "Death : " + death.ToString();
     }
 
     private void OnCollisionEnter(Collision collision)
