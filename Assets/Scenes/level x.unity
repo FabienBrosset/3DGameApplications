@@ -325,6 +325,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4307534541420894, guid: beeb4c311e48ba14cb1d92a034a553be, type: 3}
   m_PrefabInstance: {fileID: 366558529}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &274266007 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5782802680701769624, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+  m_PrefabInstance: {fileID: 990618006}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &281719614
 GameObject:
   m_ObjectHideFlags: 0
@@ -980,6 +991,10 @@ PrefabInstance:
       propertyPath: m_Size.z
       value: 0.6
       objectReference: {fileID: 0}
+    - target: {fileID: 3185977423834457013, guid: fb9c7c5d4fd0bf34985a3e7b1eec6dec, type: 3}
+      propertyPath: deathText
+      value: 
+      objectReference: {fileID: 274266007}
     - target: {fileID: 3185977423834457013, guid: fb9c7c5d4fd0bf34985a3e7b1eec6dec, type: 3}
       propertyPath: spawnPoint
       value: 
