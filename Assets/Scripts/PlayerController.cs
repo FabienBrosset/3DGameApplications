@@ -163,22 +163,48 @@ public class PlayerController : MonoBehaviour
             other.gameObject.GetComponent<onCollectInk>().displayText();
             Destroy(other.gameObject);
         }
-        if (other.tag == "BounceInk")
+        else if (other.tag == "BounceInk")
         {
             GameObject.Find("DrawingArea").GetComponent<DrawingManager>().AddInk(1, 10);
             other.gameObject.GetComponent<onCollectInk>().displayText();
             Destroy(other.gameObject);
         }
-        if (other.tag == "BallonInk")
+        else if (other.tag == "BallonInk")
         {
             GameObject.Find("DrawingArea").GetComponent<DrawingManager>().AddInk(2, 10);
             other.gameObject.GetComponent<onCollectInk>().displayText();
             Destroy(other.gameObject);
         }
-        if (other.tag == "FadeInk")
+        else if (other.tag == "FadeInk")
         {
             GameObject.Find("DrawingArea").GetComponent<DrawingManager>().AddInk(3, 10);
             other.gameObject.GetComponent<onCollectInk>().displayText();
+            Destroy(other.gameObject);
+        }
+        else if (other.tag == "Rubber")
+        {
+            GameObject[] _inks = GameObject.FindGameObjectsWithTag("Ink");
+
+            foreach (GameObject _ink in _inks)
+            {
+                Destroy(_ink);
+            }
+
+            _inks = GameObject.FindGameObjectsWithTag("BalloonInk");
+
+            foreach (GameObject _ink in _inks)
+            {
+                Destroy(_ink);
+            }
+            _inks = GameObject.FindGameObjectsWithTag("Bounce");
+
+            foreach (GameObject _ink in _inks)
+            {
+                Destroy(_ink);
+            }
+
+
+
             Destroy(other.gameObject);
         }
         if (other.tag == "Lava")

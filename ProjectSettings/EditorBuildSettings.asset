@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TutoFadedInk.unity
     guid: 922bf93ae2c72b446b8c2727ccddaaf8
+  - enabled: 1
+    path: Assets/Scenes/Level_5.unity
+    guid: 992e56b41b845ae4fbc2c06d1b9aa718
   m_configObjects: {}
