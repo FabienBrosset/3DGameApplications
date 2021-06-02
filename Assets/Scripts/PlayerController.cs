@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static SettingsData;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class PlayerController : MonoBehaviour
     bool onCollision;
 
     public SettingsData SettingsData;
+
+    public string actualLevel;
 
     void Start()
     {
@@ -135,6 +138,7 @@ public class PlayerController : MonoBehaviour
 
     private void die()
     {
+        SceneManager.LoadScene(actualLevel);
         audioSource.PlayOneShot(dieSound, 1);
         transform.localPosition = spawnPoint.transform.localPosition;
         death++;

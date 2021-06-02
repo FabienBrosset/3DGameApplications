@@ -926,6 +926,7 @@ GameObject:
   - component: {fileID: 3185977423834457008}
   - component: {fileID: 3185977423834457013}
   - component: {fileID: 3185977423834457012}
+  - component: {fileID: 2900167731669214690}
   - component: {fileID: 2696066697138442120}
   m_Layer: 0
   m_Name: ybot
@@ -1035,6 +1036,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   multGravity: 1
+--- !u!114 &2900167731669214690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2375565549130005062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d445da7bbc8b19439adb77a14b792fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &2696066697138442120
 AudioSource:
   m_ObjectHideFlags: 0
