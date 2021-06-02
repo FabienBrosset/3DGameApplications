@@ -43,27 +43,21 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        float move = Input.GetAxis("Horizontal") * maxSpeed;
+        grounded = IsGrounded();
+        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
+        transform.position += move * Time.deltaTime * maxSpeed;
 
         if (Input.GetKeyDown(SettingsData.savedData.keyboard.Jump) && grounded)
         {
             jumpRequest = true;
             anim.SetTrigger("IsJumping");
         }
+
         if (rb.position.y < -10f || rb.position.y > 20f)
         {
             die();
         }
-        if (!grounded && onCollision) {
-            move = 0;
-        }
-        float fall = rb.velocity.y;
-        if (fall < 0.1f && fall > -0.1f)
-        {
-            fall = 0;
-        }
-        walkingAnimation(move);
-        rb.velocity = new Vector2(move, fall);
+        walkingAnimation(move.x);
     }
 
     void FixedUpdate()
@@ -95,7 +89,6 @@ public class PlayerController : MonoBehaviour
 
     private void walkingAnimation(float move)
     {
-        grounded = IsGrounded();
         if (move != 0f)
             anim.SetTrigger("IsWalking");
         else
@@ -202,8 +195,6 @@ public class PlayerController : MonoBehaviour
             {
                 Destroy(_ink);
             }
-
-
 
             Destroy(other.gameObject);
         }
