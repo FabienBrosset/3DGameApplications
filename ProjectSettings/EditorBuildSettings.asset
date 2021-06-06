@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TutoJump.unity
     guid: 2fab6c31d9e058341b34b89ab2aeb926
+  - enabled: 1
+    path: Assets/Scenes/LowInkLevel.unity
+    guid: 92dfe030135d88246a732b73629e4ab5
   m_configObjects: {}
