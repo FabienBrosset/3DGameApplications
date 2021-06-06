@@ -1000,6 +1000,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1172197221}
     - target: {fileID: 3185977423834457013, guid: fb9c7c5d4fd0bf34985a3e7b1eec6dec, type: 3}
+      propertyPath: actualLevel
+      value: level x
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185977423834457013, guid: fb9c7c5d4fd0bf34985a3e7b1eec6dec, type: 3}
       propertyPath: SettingsData
       value: 
       objectReference: {fileID: 946138600}

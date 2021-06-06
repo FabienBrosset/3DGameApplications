@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static SettingsData;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -27,6 +28,8 @@ public class PlayerController : MonoBehaviour
 
     public SettingsData SettingsData;
 
+    public string actualLevel;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -40,27 +43,21 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        float move = Input.GetAxis("Horizontal") * maxSpeed;
+        grounded = IsGrounded();
+        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
+        transform.position += move * Time.deltaTime * maxSpeed;
 
         if (Input.GetKeyDown(SettingsData.savedData.keyboard.Jump) && grounded)
         {
             jumpRequest = true;
             anim.SetTrigger("IsJumping");
         }
+
         if (rb.position.y < -10f || rb.position.y > 20f)
         {
             die();
         }
-        if (!grounded && onCollision) {
-            move = 0;
-        }
-        float fall = rb.velocity.y;
-        if (fall < 0.1f && fall > -0.1f)
-        {
-            fall = 0;
-        }
-        walkingAnimation(move);
-        rb.velocity = new Vector2(move, fall);
+        walkingAnimation(move.x);
     }
 
     void FixedUpdate()
@@ -92,7 +89,6 @@ public class PlayerController : MonoBehaviour
 
     private void walkingAnimation(float move)
     {
-        grounded = IsGrounded();
         if (move != 0f)
             anim.SetTrigger("IsWalking");
         else
@@ -135,6 +131,7 @@ public class PlayerController : MonoBehaviour
 
     private void die()
     {
+        SceneManager.LoadScene(actualLevel);
         audioSource.PlayOneShot(dieSound, 1);
         transform.localPosition = spawnPoint.transform.localPosition;
         death++;
@@ -159,22 +156,46 @@ public class PlayerController : MonoBehaviour
             other.gameObject.GetComponent<onCollectInk>().displayText();
             Destroy(other.gameObject);
         }
-        if (other.tag == "BounceInk")
+        else if (other.tag == "BounceInk")
         {
             GameObject.Find("DrawingArea").GetComponent<DrawingManager>().AddInk(1, 10);
             other.gameObject.GetComponent<onCollectInk>().displayText();
             Destroy(other.gameObject);
         }
-        if (other.tag == "BallonInk")
+        else if (other.tag == "BallonInk")
         {
             GameObject.Find("DrawingArea").GetComponent<DrawingManager>().AddInk(2, 10);
             other.gameObject.GetComponent<onCollectInk>().displayText();
             Destroy(other.gameObject);
         }
-        if (other.tag == "FadeInk")
+        else if (other.tag == "FadeInk")
         {
             GameObject.Find("DrawingArea").GetComponent<DrawingManager>().AddInk(3, 10);
             other.gameObject.GetComponent<onCollectInk>().displayText();
+            Destroy(other.gameObject);
+        }
+        else if (other.tag == "Rubber")
+        {
+            GameObject[] _inks = GameObject.FindGameObjectsWithTag("Ink");
+
+            foreach (GameObject _ink in _inks)
+            {
+                Destroy(_ink);
+            }
+
+            _inks = GameObject.FindGameObjectsWithTag("BalloonInk");
+
+            foreach (GameObject _ink in _inks)
+            {
+                Destroy(_ink);
+            }
+            _inks = GameObject.FindGameObjectsWithTag("Bounce");
+
+            foreach (GameObject _ink in _inks)
+            {
+                Destroy(_ink);
+            }
+
             Destroy(other.gameObject);
         }
         if (other.tag == "Lava")

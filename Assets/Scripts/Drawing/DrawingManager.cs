@@ -239,6 +239,7 @@ public class DrawingManager : MonoBehaviour
         if (inkSelected == 0)
         {
             obj.GetComponent<Renderer>().material = inkMat;
+            obj.tag = "Ink";
             audioSource.PlayOneShot(inkClassicSound, 1);
         }
         else if (inkSelected == 1)
@@ -257,6 +258,7 @@ public class DrawingManager : MonoBehaviour
         else if (inkSelected == 3)
         {
             obj.AddComponent<FadeScript>();
+            obj.tag = "Ink";
             audioSource.PlayOneShot(inkFadeSound, 1);
         }
 
