@@ -4849,10 +4849,50 @@ PrefabInstance:
       propertyPath: SettingsData
       value: 
       objectReference: {fileID: 1697494805}
+    - target: {fileID: 7118264525094342373, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.62045
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118264525094342373, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.62045
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118264525094342373, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.62045
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118264525094342373, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -371.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118264525094342373, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -149.8
+      objectReference: {fileID: 0}
     - target: {fileID: 7118264525094342378, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
       propertyPath: DrawingManager
       value: 
       objectReference: {fileID: 861655530}
+    - target: {fileID: 7118264525207670410, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.80172
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118264525207670410, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.80172
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118264525207670410, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.80172
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118264525207670410, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -9.200012
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118264525207670410, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 7.2700195
+      objectReference: {fileID: 0}
     - target: {fileID: 7118264525211236414, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
       propertyPath: m_Name
       value: UIAndSoundManagement
@@ -4901,14 +4941,74 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7118264525911926617, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.62045
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118264525911926617, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.62045
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118264525911926617, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.62045
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118264525911926617, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -241.17003
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118264525911926617, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -149.8
+      objectReference: {fileID: 0}
     - target: {fileID: 7118264525911926621, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
       propertyPath: DrawingManager
       value: 
       objectReference: {fileID: 861655530}
+    - target: {fileID: 7118264526223090170, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.62045
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118264526223090170, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.62045
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118264526223090170, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.62045
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118264526223090170, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -284.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118264526223090170, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -149.8
+      objectReference: {fileID: 0}
     - target: {fileID: 7118264526223090175, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
       propertyPath: DrawingManager
       value: 
       objectReference: {fileID: 861655530}
+    - target: {fileID: 7118264526823874341, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.62045
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118264526823874341, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.62045
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118264526823874341, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.62045
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118264526823874341, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -328.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118264526823874341, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -149.8
+      objectReference: {fileID: 0}
     - target: {fileID: 7118264526823874346, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
       propertyPath: DrawingManager
       value: 
