@@ -5587,6 +5587,7 @@ MonoBehaviour:
   particles1: {fileID: 970077713}
   canvasUI: {fileID: 1064993042}
   canvasPause: {fileID: 1588652734}
+  drawingArea: {fileID: 0}
   myFX: {fileID: 1947792348}
   pauseSound: {fileID: 8300000, guid: 7a458d5779f994940aad4ab57a879321, type: 3}
   SettingsData: {fileID: 1832042858}
@@ -19236,12 +19237,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35156fc867480ac4d898565760e2a7b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forward: {fileID: 767505179}
   left: {fileID: 2119357202}
-  backward: {fileID: 2125730474}
   right: {fileID: 290485814}
   jump: {fileID: 204378731}
-  crouch: {fileID: 2110218542}
+  slot1: {fileID: 0}
+  slot2: {fileID: 0}
+  slot3: {fileID: 0}
+  slot4: {fileID: 0}
   SettingsData: {fileID: 1832042858}
 --- !u!1 &1733839032
 GameObject:
@@ -19497,12 +19499,13 @@ MonoBehaviour:
       FxVolume: 0
       MusicVolume: 0
     keyboard:
-      Forward: 0
-      Backward: 0
       Left: 0
       Right: 0
       Jump: 0
-      Crouch: 0
+      Slot1: 0
+      Slot2: 0
+      Slot3: 0
+      Slot4: 0
     video:
       ResolutionIndex: 0
       QualityIndex: 0
