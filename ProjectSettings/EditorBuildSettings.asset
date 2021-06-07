@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LowInkLevel.unity
     guid: 92dfe030135d88246a732b73629e4ab5
+  - enabled: 1
+    path: Assets/Scenes/new_level.unity
+    guid: f12c7e68bb47a9c4984e09e2caa00f20
   m_configObjects: {}
