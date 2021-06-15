@@ -1781,16 +1781,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Water ink
+  m_Text: 'Normal Ink
 
 
     This ink is
 
-    useful to
+    basic, that don''t gives you special
 
-    damage
-
-    cables'
+    boost'
 --- !u!1 &7118264524972999476
 GameObject:
   m_ObjectHideFlags: 0
@@ -10588,16 +10586,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Water ink
+  m_Text: 'Bouncing Ink
 
 
-    This ink is
+    This ink
 
-    useful to
+    will permit you to do bigger
 
-    damage
-
-    cables'
+    jumps.'
 --- !u!1 &7118264526426400178
 GameObject:
   m_ObjectHideFlags: 0
@@ -10755,16 +10751,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Water ink
+  m_Text: 'Fading Ink
 
 
-    This ink is
+    This ink diseappear
 
-    useful to
+    after few seconds.
 
-    damage
-
-    cables'
+    Be fast.'
 --- !u!1 &7118264526506043044
 GameObject:
   m_ObjectHideFlags: 0
@@ -12722,16 +12716,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Water ink
+  m_Text: 'Balloon Ink
 
 
-    This ink is
+    This ink is moving
 
-    useful to
+    to the sky.
 
-    damage
-
-    cables'
+    Use it carefully'
 --- !u!1 &7118264526892325014
 GameObject:
   m_ObjectHideFlags: 0

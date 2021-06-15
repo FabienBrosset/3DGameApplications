@@ -6976,6 +6976,10 @@ PrefabInstance:
       propertyPath: SettingsData
       value: 
       objectReference: {fileID: 1715003832}
+    - target: {fileID: 7118264525094342373, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 29.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7118264525094342378, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
       propertyPath: DrawingManager
       value: 
@@ -7028,14 +7032,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7118264525911926617, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -347.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118264525911926617, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -152.6
+      objectReference: {fileID: 0}
     - target: {fileID: 7118264525911926621, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
       propertyPath: DrawingManager
       value: 
       objectReference: {fileID: 1833023295}
+    - target: {fileID: 7118264526223090170, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -348.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118264526223090170, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -91.6
+      objectReference: {fileID: 0}
     - target: {fileID: 7118264526223090175, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
       propertyPath: DrawingManager
       value: 
       objectReference: {fileID: 1833023295}
+    - target: {fileID: 7118264526823874341, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -349
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118264526823874341, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -30.9
+      objectReference: {fileID: 0}
     - target: {fileID: 7118264526823874346, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
       propertyPath: DrawingManager
       value: 

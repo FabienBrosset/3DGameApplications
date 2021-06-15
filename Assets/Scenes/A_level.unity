@@ -477,6 +477,10 @@ PrefabInstance:
       propertyPath: settingsData
       value: 
       objectReference: {fileID: 616060223}
+    - target: {fileID: 7118264525094342373, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 29.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7118264525094342378, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
       propertyPath: DrawingManager
       value: 
@@ -529,10 +533,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7118264525911926617, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -349
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118264525911926617, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -153.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7118264525911926621, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
       propertyPath: DrawingManager
       value: 
       objectReference: {fileID: 886362259}
+    - target: {fileID: 7118264526223090170, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -348.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118264526223090170, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -92.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7118264526223090175, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
       propertyPath: DrawingManager
       value: 
@@ -541,6 +561,14 @@ PrefabInstance:
       propertyPath: SettingsData
       value: 
       objectReference: {fileID: 616060223}
+    - target: {fileID: 7118264526823874341, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -349
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118264526823874341, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -30.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7118264526823874346, guid: 97351c84e8194d24cb0e9e10ac9bdc8e, type: 3}
       propertyPath: DrawingManager
       value: 
